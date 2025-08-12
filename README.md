@@ -10,4 +10,5 @@ Assumptions
 -Running for 730 hours
 -Includes costs for public IP VmSS and load balancer(500GB data processed)
 
-<img width="339" height="331" alt="Untitled Diagram drawio" src="https://github.com/user-attachments/assets/119b2c1c-59f9-45d0-91a7-c427a7f9f84a" />
+<img width="339" height="331" alt="Az-VMSS drawio" src="https://github.com/user-attachments/assets/31dd6e91-2094-4bae-a203-cab7d7e2e0af" />
+
