@@ -3,6 +3,8 @@ Azure VMSS. Load balanced. running Nginx.
 
 Azure Virtual Machine scale sets behind a Standard SKU Load balancer.
 
+The Deployment_template is an ARM template. 
+
 
 Estimated monthly Cost- Pay-as-you-go - 65aud 
 Assumptions
