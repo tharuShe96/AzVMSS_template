@@ -1,7 +1,7 @@
 # AzVMSS_template
 Azure VMSS. Load balanced. running Nginx.
 
-Azure Virtual Machine scale sets behind a Standard SKU Lobad balancer.
+Azure Virtual Machine scale sets behind a Standard SKU Load balancer.
 
 
 Estimated monthly Cost- Pay-as-you-go - 65aud 
