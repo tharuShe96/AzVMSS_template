@@ -87,3 +87,58 @@
         ]
       }
     },
+{
+      "type": "Microsoft.Compute/virtualMachineScaleSets",
+      "apiVersion": "2024-03-01",
+      "name": "[parameters('vmssName')]",
+      "location": "[parameters('location')]",
+      "sku": {
+        "name": "Standard_B1s",
+        "tier": "Standard",
+        "capacity": 0  // Autoscale will set initial count
+      },
+      "properties": {
+        "upgradePolicy": { "mode": "Automatic" },
+        "virtualMachineProfile": {
+          "storageProfile": {
+            "imageReference": {
+              "publisher": "Canonical",
+              "offer": "0001-com-ubuntu-server-focal",
+              "sku": "20_04-lts-gen2",
+              "version": "latest"
+            },
+            "osDisk": { "createOption": "FromImage" }
+          },
+          "osProfile": {
+            "computerNamePrefix": "[parameters('vmssName')]",
+            "adminUsername": "[parameters('adminUsername')]",
+            "adminPassword": "[parameters('adminPassword')]",
+            "customData": "[base64('#!/bin/bash\napt-get update\napt-get install -y nginx\nsystemctl enable nginx\nsystemctl start nginx')]"
+          },
+          "networkProfile": {
+            "networkInterfaceConfigurations": [
+              {
+                "name": "nicConfig",
+                "properties": {
+                  "primary": true,
+                  "ipConfigurations": [
+                    {
+                      "name": "ipconfig",
+                      "properties": {
+                        "subnet": { "id": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('vnetName'), variables('subnetName'))]" },
+                        "loadBalancerBackendAddressPools": [
+                          {
+                            "id": "[resourceId('Microsoft.Network/loadBalancers/backendAddressPools', variables('lbName'), variables('backendPoolName'))]"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+
