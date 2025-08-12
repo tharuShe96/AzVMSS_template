@@ -1,0 +1,19 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "vmssName": { "type": "string", "defaultValue": "MyVMSS" },
+    "location": { "type": "string", "defaultValue": "australiaeast" },
+    "adminUsername": { "type": "string" },
+    "adminPassword": { "type": "securestring" } 
+  },
+  "variables": {
+    "lbName": "myVMSS-LB",
+    "backendPoolName": "backendPool",
+    "vnetName": "[concat(parameters('vmssName'),'-vnet')]",
+    "subnetName": "MyVMSS-vnet-subnet01",
+    "publicIPName": "[concat(parameters('vmssName'),'PublicIP')]",
+    "probeName": "tcpProbe",
+    "frontendName": "LBFrontEnd",
+    "lbRuleName": "httpRule" //variables defined
+  },
