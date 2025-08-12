@@ -6,8 +6,9 @@ Azure Virtual Machine scale sets behind a Standard SKU Load balancer.
 The Deployment_template is an ARM template. 
 
 
-Estimated monthly Cost- Pay-as-you-go - 65aud 
-Assumptions
+Estimated monthly Cost- Pay-as-you-go - 65aud
+
+Assumptions:
 -VM size chosen assuming the workload will just be running the nginx web page.
 -Running for 730 hours
 -Includes costs for public IP VmSS and load balancer(500GB data processed)
