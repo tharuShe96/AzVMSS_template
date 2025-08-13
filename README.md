@@ -6,8 +6,10 @@ Azure Virtual Machine scale sets behind a Standard SKU Load balancer.
 The Deployment_template is an ARM template. 
 
 Pre-requisite - Have permissions to create resources. ie:Contributor role on the subscription or at resource group level.
-Login to Azure portal > Create Resource Group > Custom Deployment > Build your own template in the editor > Load file/Copy paste code >
 
+Login to Azure portal > Create Resource Group > Custom Deployment > Build your own template in the editor > Load file/Copy paste code > Save >Review and Create
+(Specify any changes required like resource group name. location, VMSS name, Admin username and password etc.)
+(In case, if initial deployment fails for some resource, "Redeploy", and it will create the missing resources)
 
 Estimated monthly Cost- Pay-as-you-go - 65aud
 
