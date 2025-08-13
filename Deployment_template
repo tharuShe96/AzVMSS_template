@@ -184,9 +184,8 @@
           }
         ]
       }
-    }
-  ],
-{
+},
+	{
   "type": "Microsoft.Network/networkSecurityGroups",
   "apiVersion": "2023-11-01",
   "name": "[concat(parameters('vmssName'), '-nsg')]",
@@ -205,11 +204,13 @@
           "destinationAddressPrefix": "*",
           "destinationPortRange": "80"
         }
-      }
-    ]
+	  }
+	]
   }
-},
-  "outputs": {
+   
+}
+]
+  ,"outputs": {
     "resourceGroupName": { "type": "string", "value": "MY-RG01" },
     "location": { "type": "string", "value": "australiaeast" },
     "loadBalancerPublicIP": {
