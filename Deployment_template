@@ -157,7 +157,7 @@
               {
                 "metricTrigger": {
                   "metricName": "Percentage CPU",
-                  "metricResourceUri": "[resourceId('Microsoft.Compute/virtualMachineScaleSets', parameters('vmssName'))]",
+                  "metricResourceUri": "[resourceId('Microsoft.Compute/virtualMachineScaleSets', parameters('vmssName'))]", //scale up(by 1) when the percentage CPU goes above 70
                   "timeGrain": "PT1M",
                   "statistic": "Average",
                   "timeWindow": "PT5M",
