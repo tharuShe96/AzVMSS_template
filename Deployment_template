@@ -152,7 +152,7 @@
         "profiles": [
           {
             "name": "autoscaleProfile",
-            "capacity": { "minimum": "2", "maximum": "5", "default": "2" },
+            "capacity": { "minimum": "2", "maximum": "5", "default": "2" }, //this will provision 2 instances initially and will not let the instance count drop below 2.
             "rules": [
               {
                 "metricTrigger": {
@@ -186,7 +186,7 @@
       }
 },
 	{
-  "type": "Microsoft.Network/networkSecurityGroups",
+  "type": "Microsoft.Network/networkSecurityGroups", //creating network security group with Inbound rule to allow traffic to port 80 so that the web page can be accessed.
   "apiVersion": "2023-11-01",
   "name": "[concat(parameters('vmssName'), '-nsg')]",
   "location": "[parameters('location')]",
